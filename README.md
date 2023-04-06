@@ -1,2 +1,2 @@
 # Algorithm-study-Leetcode
-with suhwan
+with suhwan sohyun sangjun
