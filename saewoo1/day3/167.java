@@ -9,15 +9,15 @@ class Solution {
 	 int[] res = new int[2];
 	 for (int i = 0; i < numbers.length; i++)
 	 {
-			 if (numbers[left] + numbers[right] > target)
-					right--;
-			 else if (numbers[left] + numbers[right] < target)
-					left++;
-			 if (numbers[left] + numbers[right] == target)
-			 {
-					 res[0] = left + 1;
-					 res[1] = right + 1;
-			 }
+		 if (numbers[left] + numbers[right] == target)
+		 {
+				 res[0] = left + 1;
+				 res[1] = right + 1;
+		 }
+		 else if (numbers[left] + numbers[right] > target)
+				right--;
+		 else if (numbers[left] + numbers[right] < target)
+				left++;
 	 }
 	 return res;
 	}
