@@ -28,3 +28,28 @@ class Solution {
         return size + 1; // 개수로 인지하기 위해 마지막에 1을 더했슴
     }
 }
+
+-- slow, fast 다른 사람 풀이인데 개짱천재임
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) { // 아니 시발 이생각을 어케해낸거야 slow는 한칸씩, fast는 두 칸씩 전진하면서 fast가 null에 닿으면 slow는 중간 지점을 가리킨다 미친
+            slow = slow.next;
+            fast = fast.next.next;
+        }        
+        
+        return slow;
+    }
+}
