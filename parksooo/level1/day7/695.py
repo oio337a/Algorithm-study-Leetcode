@@ -21,6 +21,6 @@ def maxAreaOfIsland(grid: List[List[int]]) -> int:
 						if 0 <= i < row and 0 <= j < col and grid[i][j] == 1:
 							queue.append((i, j))
 							grid[i][j] = 0 # 중복 방문을 막기위해서 0으로 만든다
-			max_size = max(max_size, size)
+			max_size = max(max_size, size) # max 값을 찾아서
 	
 	return max_size
