@@ -5,9 +5,8 @@ class Solution:
         while start < end:
             check = numbers[start] + numbers[end]
             if target == check:
-                break
+                return [start + 1, end + 1]
             elif target > check:
                 start += 1
             else:
                 end -= 1
-        return [start + 1, end + 1]
