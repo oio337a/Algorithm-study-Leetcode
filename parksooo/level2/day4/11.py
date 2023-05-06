@@ -16,14 +16,35 @@ class Solution:
     def maxArea(self, height: List[int]) -> int:
         left, right = 0 , len(height) - 1
         res = 0
-        while left <= right:
+        while left < right:
             container = min(height[left], height[right]) * (right - left)
+            min_h = min(height[left], height[right])
             res = max(res, container)
             if height[right] > height[left]: # 분기점이 height에 대한 비교
-                left += 1
+                while height[left] <= min_h and left < right:
+                    left += 1
             else :
-                right -= 1
+                while height[right] <= min_h and left < right:
+                    right -= 1
         return res
+
+# class Solution:
+#     def maxArea(self, height: List[int]) -> int:
+#         n = max(height)
+#         start = 0
+#         area = 0
+#         end = len(height) - 1
+#         for i in range(1, n + 1):
+#             while height[start] < i:
+#                 start += 1
+#             while height[end] < i:
+#                 end -=1
+#             if start == end:
+#                 return area
+#             val = (end - start) * i
+#             if val > area:
+#                 area = val
+#         return area
 
 test = Solution()
 print(test.maxArea([1,8,6,2,5,4,8,3,7]))
