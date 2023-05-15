@@ -13,4 +13,4 @@ def rob(nums: List[int]) -> int:
         dp[i] = max(dp[i - 2], dp[i - 3]) + nums[i] # 점화식 
         res = max(dp[i], res)
     return res
-print(rob([2, 1, 1, 2]))
+print(rob([2, 1, 1, 2]))     
